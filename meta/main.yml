@@ -1,0 +1,35 @@
+---
+galaxy_info:
+  role_name: papertrail
+  author: Gabriel Suarez
+  description: Installs and configure papertrail remote_syslog2
+  license: MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: EL
+      versions:
+        - 6
+        - 7
+    - name: Amazon
+      versions:
+        - 2016.09
+        - 2017.03
+        - 2017.09
+        - 2017.12
+    - name: Debian
+      versions:
+        - stretch
+    - name: Ubuntu
+      versions:
+        - bionic
+  galaxy_tags:
+    - mysql
+    - db
+    - database
+    - amazonlinux
+    - centos
+    - rhel
+    - debian
+    - ubuntu
+
+dependencies: []
