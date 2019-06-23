@@ -1,0 +1,15 @@
+# {{ ansible_managed }}
+[Unit]
+Description=papertrail
+Documentation=https://github.com/papertrail/remote_syslog2
+After=network-online.target
+
+[Service]
+ExecStartPre=/usr/bin/test -e {{ papertrail_config_file_path }}
+ExecStart={{ papertrail_executable }} -D -c {{ papertrail_config_file_path }}
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target

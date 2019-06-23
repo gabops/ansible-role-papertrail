@@ -1,0 +1,6 @@
+---
+- name: restart papertrail
+  service:
+    name: "{{ papertrail_service_name }}"
+    state: restarted
+  when: papertrail_managed_conf_file | bool and papertrail_service_started | bool

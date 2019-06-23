@@ -1,0 +1,7 @@
+---
+__papertrail_download_url: "https://github.com/papertrail/remote_syslog2/releases/download/v{{ papertrail_version }}"
+__papertrail_executable: /usr/local/bin/remote_syslog
+__papertrail_systemd_unit_path: /etc/systemd/system
+__papertrail_sysvinit_script_path: /etc/init.d
+__papertrail_pid_directory: /var/run
+__papertrail_service_name: remote_syslog

@@ -1,0 +1,45 @@
+# {{ ansible_managed }}
+{% if papertrail_custom_hostname is defined and papertrail_custom_hostname | length %}
+hostname: {{ papertrail_custom_hostname }}
+{% endif %}
+destination:
+  host: {{ papertrail_destination_host }}
+  port: {{ papertrail_destination_port }}
+  protocol: {{ papertrail_destination_protocol }}
+{% if papertrail_files_to_log is defined and papertrail_files_to_log | length %}
+files:
+{% for log_file in papertrail_files_to_log %}
+{% if log_file is mapping %}
+{% for key, value in log_file.items() %}
+{% if key == "path" %}
+  - {{ key }}: {{ value }}
+{% else %}
+    {{ key }}: {{ value }}
+{% endif %}
+{% endfor %}
+{% else %}
+  - {{ log_file }}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if papertrail_files_to_exclude is defined and papertrail_files_to_exclude | length %}
+exclude_files:
+{% for file_to_exclude in papertrail_files_to_exclude %}
+  - {{ file_to_exclude }}
+{% endfor %}
+{% endif %}
+{% if papertrail_exclude_patterns is defined and papertrail_exclude_patterns | length %}
+exclude_patterns:
+{% for exclude_pattern in papertrail_exclude_patterns %}
+  - {{ exclude_pattern }}
+{% endfor %}
+{% endif %}
+{% if papertrail_log_facility is defined and papertrail_log_facility | length %}
+facility: {{ papertrail_log_facility }}
+{% endif %}
+{% if papertrail_log_severity is defined and papertrail_log_severity | length %}
+severity: {{ papertrail_log_severity }}
+{% endif %}
+{% if papertrail_new_file_check_interval is defined and papertrail_new_file_check_interval | length %}
+new_file_check_interval: {{ papertrail_new_file_check_interval }}
+{% endif %}
