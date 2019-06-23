@@ -1,7 +1,9 @@
 gabops.papertrail
 =================
 
-Installs and configure papertrail using remote_syslog2 (see https://help.papertrailapp.com/kb/configuration/configuring-centralized-logging-from-text-log-files-in-unix/ and https://github.com/papertrail/remote_syslog2)
+Installs and configure papertrail using remote_syslog2 (see 
+[Papertrail official documentation](https://help.papertrailapp.com/kb/configuration/configuring-centralized-logging-from-text-log-files-in-unix/).
+and [remote_syslog2 Github repo](https://github.com/papertrail/remote_syslog2)
 
 Requirements
 ------------
@@ -22,14 +24,14 @@ Role Variables
 | papertrail_destination_host        | ""                       | The papertrail destination host to send the logs to. Check your papertrail account for it. |
 | papertrail_destination_port        | ""                       | The papertrail destination port to connect to the destination host. Check your papertrail account for it.              |
 | papertrail_destination_protocol    | tls                      | This value can be tls(encrypted) or tcp (unencrypted)              |
-| papertrail_log_facility            | ""                       | The syslog facility to use. See https://en.wikipedia.org/wiki/Syslog#Facility |
-| papertrail_log_severity            | ""                       | The syslog severity to use. See https://en.wikipedia.org/wiki/Syslog#Severity_level |
+| papertrail_log_facility            | ""                       | The syslog facility to use. See [syslog facility](https://en.wikipedia.org/wiki/Syslog#Facility) |
+| papertrail_log_severity            | ""                       | The syslog severity to use. See  [syslog severity](https://en.wikipedia.org/wiki/Syslog#Severity_level) |
 | papertrail_new_file_check_interval | ""                       | If a glob pattern for logs files is used this parameter controls the frecuency of checking for new log files in the directory |
 | papertrail_files_to_log            | []                       | The file or globs to read. See examples. |
 | papertrail_files_to_exclude        | []                       | Files to exclude in a directory. See examples |
 | papertrail_exclude_patterns        | []                       | The pattern in the log file you are reading you want to ignore. |
 
-> For more detailed information about remote_syslog2 configuration see https://github.com/papertrail/remote_syslog2/blob/master/README.md
+For more detailed information about remote_syslog2 configuration see https://github.com/papertrail/remote_syslog2/blob/master/README.md
 
 ---
 This role uses internally the next variables (see vars/):
