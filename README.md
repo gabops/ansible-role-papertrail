@@ -1,5 +1,6 @@
 gabops.papertrail
 =================
+[![Build Status](https://travis-ci.org/gabops/ansible-role-papertrail.svg?branch=master)](https://travis-ci.org/gabops/ansible-role-papertrail)
 
 Installs and configure papertrail using remote_syslog2 (see 
 [Papertrail official documentation](https://help.papertrailapp.com/kb/configuration/configuring-centralized-logging-from-text-log-files-in-unix/).
