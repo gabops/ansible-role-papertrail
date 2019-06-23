@@ -1,0 +1,44 @@
+---
+- name: Set installer arquitecture
+  set_fact:
+    installer_arch: "amd64"
+  when: ansible_architecture == "x86_64"
+
+- name: Include os family variables
+  include_vars:
+    file: "{{ ansible_os_family }}.yml"
+
+- name: Set papertrail download url
+  set_fact:
+    papertrail_download_url: "{{ __papertrail_download_url }}"
+  when: papertrail_download_url is not defined
+
+- name: Set papertrail package name
+  set_fact:
+    papertrail_package_name: "{{ __papertrail_package_name }}"
+  when: papertrail_package_name is not defined
+
+- name: Set papertrail executable
+  set_fact:
+    papertrail_executable: "{{ __papertrail_executable }}"
+  when: papertrail_executable is not defined
+
+- name: Set papertrail systemd unit path
+  set_fact:
+    papertrail_systemd_unit_path: "{{ __papertrail_systemd_unit_path }}"
+  when: papertrail_systemd_unit_path is not defined
+
+- name: Set papertrail sysvinit script path
+  set_fact:
+    papertrail_sysvinit_script_path: "{{ __papertrail_sysvinit_script_path }}"
+  when: papertrail_sysvinit_script_path is not defined
+
+- name: Set papertrail pid directory
+  set_fact:
+    papertrail_pid_directory: "{{ __papertrail_pid_directory }}"
+  when: papertrail_pid_directory is not defined
+
+- name: Set papertrail service name
+  set_fact:
+    papertrail_service_name: "{{ __papertrail_service_name }}"
+  when: papertrail_service_name is not defined
