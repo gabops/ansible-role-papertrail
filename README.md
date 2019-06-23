@@ -72,14 +72,12 @@ Example Playbook
         papertrail_custom_hostname: "host-01"
         papertrail_destination_protocol: tls
         papertrail_files_to_log:
-          - path: /var/log/nginx.log
-            tag: nginx
           - path: /var/log/httpd.log
             tag: apache
-          - /var/log/yum.log
           - /var/log/audit/*.log
+          - /var/log/nginx/*.log
         papertrail_files_to_exclude:
-          - /var/log/yum.log
+          - /var/log/nginx/access.log
         papertrail_log_facility: local7
         papertrail_log_severity: warn
       roles:
