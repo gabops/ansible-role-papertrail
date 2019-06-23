@@ -1,0 +1,2 @@
+---
+__papertrail_package_name: "remote_syslog2-{{ papertrail_version }}-1.{{ ansible_architecture }}.rpm"
