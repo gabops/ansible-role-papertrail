@@ -22,10 +22,11 @@ galaxy_info:
       versions:
         - bionic
   galaxy_tags:
-    - mysql
-    - db
-    - database
+    - monitoring
+    - logging
+    - system
     - amazonlinux
+    - papertrail
     - centos
     - rhel
     - debian
