@@ -82,7 +82,7 @@ Example Playbook
         papertrail_log_facility: local7
         papertrail_log_severity: warn
       roles:
-         - { role: papertrail }
+         - role: papertrail
 ```
 
 License
