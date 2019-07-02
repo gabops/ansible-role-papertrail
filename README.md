@@ -2,7 +2,7 @@ gabops.papertrail
 =================
 
 Installs and configure papertrail using remote_syslog2 (see 
-[Papertrail official documentation](https://help.papertrailapp.com/kb/configuration/configuring-centralized-logging-from-text-log-files-in-unix/).
+[Papertrail official documentation](https://help.papertrailapp.com/kb/configuration/configuring-centralized-logging-from-text-log-files-in-unix/)
 and [remote_syslog2 Github repo](https://github.com/papertrail/remote_syslog2)
 
 Requirements
