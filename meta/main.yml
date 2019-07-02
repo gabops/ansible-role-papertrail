@@ -2,7 +2,7 @@
 galaxy_info:
   role_name: papertrail
   author: Gabriel Suarez
-  description: Installs and configure papertrail remote_syslog2
+  description: Installs and configure papertrail using remote_syslog2
   license: MIT
   min_ansible_version: 2.0
   platforms:
