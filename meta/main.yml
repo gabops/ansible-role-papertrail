@@ -23,9 +23,10 @@ galaxy_info:
       versions:
         - bionic
   galaxy_tags:
-    - mysql
-    - db
-    - database
+    - monitoring
+    - system
+    - logging
+    - logs
     - amazonlinux
     - centos
     - rhel
