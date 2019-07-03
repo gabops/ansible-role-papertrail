@@ -1,5 +1,6 @@
 gabops.papertrail
 =================
+[![Build Status](https://travis-ci.org/gabops/ansible-role-papertrail.svg?branch=master)](https://travis-ci.org/gabops/ansible-role-papertrail)
 
 Installs and configure papertrail using remote_syslog2 (see 
 [Papertrail official documentation](https://help.papertrailapp.com/kb/configuration/configuring-centralized-logging-from-text-log-files-in-unix/)
@@ -68,14 +69,12 @@ Example Playbook
         papertrail_custom_hostname: "host-01"
         papertrail_destination_protocol: tls
         papertrail_files_to_log:
-          - path: /var/log/nginx.log
-            tag: nginx
           - path: /var/log/httpd.log
             tag: apache
-          - /var/log/yum.log
           - /var/log/audit/*.log
+          - /var/log/nginx/*.log
         papertrail_files_to_exclude:
-          - /var/log/yum.log
+          - /var/log/nginx/access.log
         papertrail_log_facility: local7
         papertrail_log_severity: warn
       roles:

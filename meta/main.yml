@@ -28,6 +28,7 @@ galaxy_info:
     - logging
     - logs
     - amazonlinux
+    - papertrail
     - centos
     - rhel
     - debian
