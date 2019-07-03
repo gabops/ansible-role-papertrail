@@ -13,7 +13,7 @@ None
 Role Variables
 --------------
 
-Role defaults:
+*Role defaults:*
 
 | Variable | Value | Description |
 | :--- | :--- | :--- |
@@ -35,11 +35,9 @@ Role defaults:
 
 > For more detailed information about remote_syslog2 configuration see https://github.com/papertrail/remote_syslog2/blob/master/README.md
 
----
+*Role vars:*
 
-Role vars:
-
-Usually you will not need to modify never any of the next values but just in case, apart of defining them I've added also the possibility of overwriting them for covering unexpected scenarios (see vars/):
+Usually you will not need to modify never any of the next values when calling the role but just in case, apart of defining them I've added also the possibility of overwriting them for covering unexpected scenarios
 
 | Variable | Value | Description |
 | :--- | :--- | :--- |
@@ -50,7 +48,7 @@ Usually you will not need to modify never any of the next values but just in cas
 | papertrail_pid_directory | /var/run | The directory where the pid file is stored |
 | papertrail_service_name | remote_syslog | The service name used for the remote_syslog2 process |
 | papertrail_package_name | "remote_syslog2-{{ papertrail_version }}-1.{{ ansible_architecture }}.rpm" | The package name for RedHat based os |
-| papertrail_package_name | remote-syslog2_{{ papertrail_version }}_{{ installer_arch }}.deb" | The package name for Debian based os |
+| papertrail_package_name | "remote-syslog2_{{ papertrail_version }}_{{ installer_arch }}.deb" | The package name for Debian based os |
 
 Dependencies
 ------------
