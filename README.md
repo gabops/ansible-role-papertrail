@@ -38,18 +38,9 @@ Role Variables
 
 *Role vars:*
 
-Usually you will not need to modify never any of the next values when calling the role but just in case, apart of defining them I've added also the possibility of overwriting them for covering unexpected scenarios
+There is a possibility of overwriting any variable in the vars/ directory. Most of the time *you should not* do it. This possibility only
+exists for covering any unexpected scenario. For doing it you only need to declare the variable without the double underscore. 
 
-| Variable | Value | Description |
-| :--- | :--- | :--- |
-| papertrail_download_url | "https://github.com/papertrail/remote_syslog2/releases/download/v{{ papertrail_version }}" | The url pointing to the remote_syslog2 version |
-| papertrail_executable | /usr/local/bin/remote_syslog | The binary that the package installs |
-| papertrail_systemd_unit_path | /etc/systemd/system | The path where store the systemd unit file is stored |
-| papertrail_sysvinit_script_path | /etc/init.d | The path where the sysvinit script file is stored |
-| papertrail_pid_directory | /var/run | The directory where the pid file is stored |
-| papertrail_service_name | remote_syslog | The service name used for the remote_syslog2 process |
-| papertrail_package_name | "remote_syslog2-{{ papertrail_version }}-1.{{ ansible_architecture }}.rpm" | The package name for RedHat based os |
-| papertrail_package_name | "remote-syslog2_{{ papertrail_version }}_{{ installer_arch }}.deb" | The package name for Debian based os |
 
 Dependencies
 ------------
@@ -63,7 +54,6 @@ Example Playbook
     - hosts: servers
       vars:
         papertrail_version: "0.19"
-        papertrail_config_file_path: /etc/papertrail.yml
         papertrail_destination_host: logs.papertrailapp.com
         papertrail_destination_port: 12345
         papertrail_custom_hostname: "host-01"
