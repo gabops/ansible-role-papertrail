@@ -3,7 +3,6 @@
   hosts: all
   vars:
     papertrail_version: "0.19"
-    papertrail_config_file_path: /etc/papertrail_test.yml
     papertrail_destination_host: localhost
     papertrail_destination_port: 12345
     papertrail_custom_hostname: "host-01"
