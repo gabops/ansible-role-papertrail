@@ -7,7 +7,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_papertrail_conf_file(host):
-    f = host.file('/etc/papertrail_test.yml')
+    f = host.file('/etc/log_files.yml')
     assert f.exists
     assert f.user == 'root'
     assert f.group == 'root'
