@@ -14,8 +14,6 @@ None
 Role Variables
 --------------
 
-*Role defaults:*
-
 | Variable | Value | Description |
 | :--- | :--- | :--- |
 | papertrail_version | "0.20" | Version to install. 0.20 is the latest at the moment |
@@ -36,20 +34,7 @@ Role Variables
 
 > For more detailed information about remote_syslog2 configuration see https://github.com/papertrail/remote_syslog2/blob/master/README.md
 
-*Role vars:*
-
-Usually you will not need to modify never any of the next values when calling the role but just in case, apart of defining them I've added also the possibility of overwriting them for covering unexpected scenarios
-
-| Variable | Value | Description |
-| :--- | :--- | :--- |
-| papertrail_download_url | "https://github.com/papertrail/remote_syslog2/releases/download/v{{ papertrail_version }}" | The url pointing to the remote_syslog2 version |
-| papertrail_executable | /usr/local/bin/remote_syslog | The binary that the package installs |
-| papertrail_systemd_unit_path | /etc/systemd/system | The path where store the systemd unit file is stored |
-| papertrail_sysvinit_script_path | /etc/init.d | The path where the sysvinit script file is stored |
-| papertrail_pid_directory | /var/run | The directory where the pid file is stored |
-| papertrail_service_name | remote_syslog | The service name used for the remote_syslog2 process |
-| papertrail_package_name | "remote_syslog2-{{ papertrail_version }}-1.{{ ansible_architecture }}.rpm" | The package name for RedHat based os |
-| papertrail_package_name | "remote-syslog2_{{ papertrail_version }}_{{ installer_arch }}.deb" | The package name for Debian based os |
+> This role also provides the possibility of overwriting any variable in the **vars/** directory. You **never should do it**. This feature only exists for covering any unexpected scenario you might find. For doing it, just declare the variable/variables without the double underscore on your group_vars, host_vars, command line etc as you would do for a variable in defaults/.
 
 Dependencies
 ------------
@@ -63,7 +48,6 @@ Example Playbook
     - hosts: servers
       vars:
         papertrail_version: "0.19"
-        papertrail_config_file_path: /etc/papertrail.yml
         papertrail_destination_host: logs.papertrailapp.com
         papertrail_destination_port: 12345
         papertrail_custom_hostname: "host-01"
