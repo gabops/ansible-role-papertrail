@@ -1,8 +1,6 @@
 ---
 papertrail_version: "0.20"
 
-papertrail_config_file_path: /etc/papertrail_conf.yml
-
 papertrail_service_enabled: true
 papertrail_service_started: true
 papertrail_managed_conf_file: true

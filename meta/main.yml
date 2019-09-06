@@ -12,6 +12,7 @@ galaxy_info:
         - 7
     - name: Amazon
       versions:
+        - 2016.09
         - 2017.03
         - 2017.09
         - 2017.12
@@ -19,6 +20,7 @@ galaxy_info:
     - name: Debian
       versions:
         - stretch
+        - buster
     - name: Ubuntu
       versions:
         - bionic

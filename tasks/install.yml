@@ -1,11 +1,11 @@
 ---
-- name: Install papertrail (RedHat)
+- name: Install Papertrail (RedHat)
   yum:
     name: "{{ papertrail_download_url }}/{{ papertrail_package_name }}"
     state: present
   when: ansible_os_family == "RedHat"
 
-- name: Install papertrail (Debian)
+- name: Install Papertrail (Debian)
   apt:
     deb: "{{ papertrail_download_url }}/{{ papertrail_package_name }}"
     update_cache: true

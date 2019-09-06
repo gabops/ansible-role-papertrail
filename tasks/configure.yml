@@ -1,5 +1,5 @@
 ---
-- name: Configure papertrail managed configuration file
+- name: Configure Papertrail managed configuration file
   template:
     src: papertrail_conf.yml.j2
     dest: "{{ papertrail_config_file_path }}"
@@ -10,31 +10,13 @@
   notify: restart papertrail
   when: papertrail_managed_conf_file | bool
 
-- name: Configure papertrail service (systemd) unit
-  template:
-    src: papertrail.systemd.j2
-    dest: "{{ papertrail_systemd_unit_path }}/{{ papertrail_service_name }}.service"
-    owner: root
-    group: root
-    mode: 0644
-  when: ansible_service_mgr == "systemd"
-
-- name: Configure papertrail service (sysvinit) script
-  template:
-    src: papertrail.sysvinit.j2
-    dest: "{{ papertrail_sysvinit_script_path }}/{{ papertrail_service_name }}"
-    owner: root
-    group: root
-    mode: 0755
-  when: ansible_service_mgr != "systemd"
-
-- name: Enable papertrail service
+- name: Enable Papertrail service
   service:
     name: "{{ papertrail_service_name }}"
     enabled: true
   when: papertrail_service_enabled | bool
 
-- name: Start papertrail service
+- name: Start Papertrail service
   service:
     name: "{{ papertrail_service_name }}"
     state: started
