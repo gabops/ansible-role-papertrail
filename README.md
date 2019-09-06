@@ -2,19 +2,17 @@ gabops.papertrail
 =================
 [![Build Status](https://travis-ci.org/gabops/ansible-role-papertrail.svg?branch=master)](https://travis-ci.org/gabops/ansible-role-papertrail)
 
-Installs and configure papertrail using remote_syslog2 (see 
+Installs and configures Papertrail (remote_syslog2) (see 
 [Papertrail official documentation](https://help.papertrailapp.com/kb/configuration/configuring-centralized-logging-from-text-log-files-in-unix/)
 and [remote_syslog2 Github repo](https://github.com/papertrail/remote_syslog2)
 
 Requirements
 ------------
 
-None
+None.
 
 Role Variables
 --------------
-
-*Role defaults:*
 
 | Variable | Value | Description |
 | :--- | :--- | :--- |
@@ -36,16 +34,12 @@ Role Variables
 
 > For more detailed information about remote_syslog2 configuration see https://github.com/papertrail/remote_syslog2/blob/master/README.md
 
-*Role vars:*
-
-There is a possibility of overwriting any variable in the vars/ directory. Most of the time *you should not* do it. This possibility only
-exists for covering any unexpected scenario. For doing it you only need to declare the variable without the double underscore. 
-
+> This role also provides the possibility of overwriting any variable in the **vars/** directory. You **never should do it**. This feature only exists for covering any unexpected scenario you might find. For doing it, just declare the variable/variables without the double underscore on your group_vars, host_vars, command line etc as you would do for a variable in defaults/.
 
 Dependencies
 ------------
 
-None
+None.
 
 Example Playbook
 ----------------
