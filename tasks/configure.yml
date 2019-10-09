@@ -2,7 +2,7 @@
 - name: Configure Papertrail managed configuration file
   template:
     src: papertrail_conf.yml.j2
-    dest: "{{ papertrail_config_file_path }}"
+    dest: "{{ papertrail_config_file_path }}/{{ papertrail_config_file_name }}"
     owner: root
     group: root
     mode: 0644

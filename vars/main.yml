@@ -1,4 +1,5 @@
 ---
 __papertrail_download_url: "https://github.com/papertrail/remote_syslog2/releases/download/v{{ papertrail_version }}"
-__papertrail_config_file_path: log_files.yml
+__papertrail_config_file_path: /etc
+__papertrail_config_file_name: log_files.yml
 __papertrail_service_name: remote_syslog

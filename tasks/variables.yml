@@ -18,6 +18,11 @@
     papertrail_config_file_path: "{{ __papertrail_config_file_path }}"
   when: papertrail_config_file_path is not defined
 
+- name: Set papertrail config file name
+  set_fact:
+    papertrail_config_file_name: "{{ __papertrail_config_file_name }}"
+  when: papertrail_config_file_name is not defined
+
 - name: Set papertrail package name
   set_fact:
     papertrail_package_name: "{{ __papertrail_package_name }}"
