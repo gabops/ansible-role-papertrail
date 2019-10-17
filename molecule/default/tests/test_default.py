@@ -13,6 +13,11 @@ def test_papertrail_conf_file(host):
     assert f.group == 'root'
 
 
+def test_papertrail_conf_file_content(host):
+    f = host.file('/etc/log_files.yml')
+    assert f.contains('this is a test')
+
+
 def test_papertrail_service(host):
     s = host.service('remote_syslog')
     assert s.is_running
