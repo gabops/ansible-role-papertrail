@@ -18,5 +18,7 @@
       - /var/log/yum.log
     papertrail_log_facility: local7
     papertrail_log_severity: warn
+    papertrail_exclude_patterns:
+      - this is a test
   roles:
     - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
