@@ -70,7 +70,7 @@ papertrail_group_files_to_log:
     tag: apache
 ```
 
-- host_vars/www.foo.bar/papertrail.yml:
+- host_vars/host-01/papertrail.yml:
 ```yaml
 
 papertrail_custom_hostname: "problematic-host-01"
