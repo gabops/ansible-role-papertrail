@@ -1,2 +1,2 @@
 ---
-__papertrail_package_name: "remote-syslog2_{{ papertrail_version }}_{{ installer_arch }}.deb"
+papertrail_package_name: "remote-syslog2_{{ papertrail_version }}_{{ installer_arch }}.deb"
