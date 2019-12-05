@@ -2,16 +2,39 @@
 papertrail_version: "0.20"
 
 papertrail_service_enabled: true
+
 papertrail_service_started: true
+
 papertrail_managed_conf_file: true
 
 papertrail_custom_hostname: ""
+
 papertrail_destination_host: ""
+
 papertrail_destination_port: ""
+
 papertrail_destination_protocol: tls
+
 papertrail_log_facility: ""
+
 papertrail_log_severity: ""
+
 papertrail_new_file_check_interval: ""
-papertrail_files_to_log: []
-papertrail_files_to_exclude: []
+
 papertrail_exclude_patterns: []
+
+papertrail_files_to_log: []
+
+papertrail_files_to_exclude: []
+
+papertrail_common_files_to_log: []
+
+papertrail_common_files_to_exclude: []
+
+papertrail_group_files_to_log: []
+
+papertrail_group_files_to_exclude: []
+
+papertrail_host_files_to_log: []
+
+papertrail_host_files_to_exclude: []

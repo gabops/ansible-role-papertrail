@@ -1,4 +1,5 @@
 # {{ ansible_managed }}
+
 {% if papertrail_custom_hostname is defined and papertrail_custom_hostname | length %}
 hostname: {{ papertrail_custom_hostname }}
 {% endif %}
@@ -6,11 +7,11 @@ destination:
   host: {{ papertrail_destination_host }}
   port: {{ papertrail_destination_port }}
   protocol: {{ papertrail_destination_protocol }}
-{% if papertrail_files_to_log is defined and papertrail_files_to_log | length %}
+{% if files_to_log | length %}
 files:
-{% for log_file in papertrail_files_to_log %}
-{% if log_file is mapping %}
-{% for key, value in log_file.items() %}
+{% for file in files_to_log %}
+{% if file is mapping %}
+{% for key, value in file.items() %}
 {% if key == "path" %}
   - {{ key }}: {{ value }}
 {% else %}
@@ -18,14 +19,14 @@ files:
 {% endif %}
 {% endfor %}
 {% else %}
-  - {{ log_file }}
+  - {{ file }}
 {% endif %}
 {% endfor %}
 {% endif %}
-{% if papertrail_files_to_exclude is defined and papertrail_files_to_exclude | length %}
+{% if files_to_exclude | length %}
 exclude_files:
-{% for file_to_exclude in papertrail_files_to_exclude %}
-  - {{ file_to_exclude }}
+{% for file in files_to_exclude %}
+  - {{ file }}
 {% endfor %}
 {% endif %}
 {% if papertrail_exclude_patterns is defined and papertrail_exclude_patterns | length %}
