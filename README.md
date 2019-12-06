@@ -78,17 +78,18 @@ papertrail_host_files_to_log:
   - /var/log/dmesg
 ```
 
+- playbook.yml
 ```yaml
-    - hosts: servers
-      vars:
-        papertrail_version: "0.19"
-        papertrail_destination_host: logs.papertrailapp.com
-        papertrail_destination_port: 12345
-        papertrail_destination_protocol: tls
-        papertrail_log_facility: local7
-        papertrail_log_severity: warn
-      roles:
-         - role: papertrail
+- hosts: servers
+  vars:
+    papertrail_version: "0.19"
+    papertrail_destination_host: logs.papertrailapp.com
+    papertrail_destination_port: 12345
+    papertrail_destination_protocol: tls
+    papertrail_log_facility: local7
+    papertrail_log_severity: warn
+  roles:
+      - role: papertrail
 ```
 
 License
