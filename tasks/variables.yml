@@ -22,7 +22,7 @@
   set_fact:
     files_to_exclude: >
       {{
-        papertrail_files_to_log | default([]) |
+        papertrail_files_to_exclude | default([]) |
         union(papertrail_common_files_to_exclude | default([])) |
         union(papertrail_group_files_to_exclude | default([])) |
         union(papertrail_host_files_to_exclude | default([]))

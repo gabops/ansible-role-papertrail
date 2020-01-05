@@ -7,6 +7,14 @@ papertrail_service_started: true
 
 papertrail_managed_conf_file: true
 
+papertrail_managed_conf_file_owner: root
+
+papertrail_managed_conf_file_group: root
+
+papertrail_managed_conf_file_mode: 0644
+
+papertrail_managed_conf_file_backup: false
+
 papertrail_custom_hostname: ""
 
 papertrail_destination_host: ""

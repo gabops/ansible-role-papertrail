@@ -3,12 +3,13 @@
   template:
     src: papertrail_conf.yml.j2
     dest: "{{ papertrail_config_file_path }}/{{ papertrail_config_file_name }}"
-    owner: root
-    group: root
-    mode: 0644
+    owner: "{{ papertrail_managed_conf_file_owner }}"
+    group: "{{ papertrail_managed_conf_file_group }}"
+    mode: "{{ papertrail_managed_conf_file_mode | string }}"
+    backup: "{{ papertrail_managed_conf_file_backup }}"
     force: true
   notify: restart papertrail
-  when: papertrail_managed_conf_file | bool
+  when: papertrail_managed_conf_file and papertrail_destination_host | length
 
 - name: Enable Papertrail service
   service:
