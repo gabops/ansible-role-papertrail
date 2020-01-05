@@ -36,7 +36,7 @@ Role Variables
 | papertrail_files_to_exclude | [] | Files to exclude in a directory. Same as previous `papertrail_files_to_log` but for excluding files to be logged. |
 | papertrail_common_files_to_log | [] | Defines common files or globs to read and send to Papertrail. Tipically you will define this variable in the `all` metagroup. |
 | papertrail_common_files_to_exclude | [] | Defines common files to exclude. Tipically you will declare this variable in the `all` metagroup. |
-| papertrail_group_files_to_log | [] | Defines group files or globs to read and send to Papertrail. Tipically you will define this variable in any of the groups your inventory (e.g. group_vars/webservers/). |
+| papertrail_group_files_to_log | [] | Defines group files or globs to read and send to Papertrail. Tipically you will define this variable in a group(s) vars of your inventory (e.g. group_vars/webservers/). |
 | papertrail_group_files_to_exclude | [] | Defines files to exlude per group. Same as previous `papertrail_group_files_to_log` but for excluding files to be logged. |
 | papertrail_host_files_to_log | [] | Defines host files or globs to read and send to Papertrail. Tipically you will define this in a host_vars file (e.g. host_vars/host-01/). |
 | papertrail_host_files_to_exclude | [] | Defines files to exlude per host. Same as previous `papertrail_host_files_to_log` but for excluding files to be logged. |
