@@ -7,21 +7,17 @@
     papertrail_destination_port: 12345
     papertrail_custom_hostname: "host-01"
     papertrail_destination_protocol: tls
-    papertrail_common_files_to_log:
+    papertrail_files_to_log:
       - path: /var/log/messages
         tag: messages
       - path: /var/log/secure
         tag: secure
-    papertrail_group_files_to_log:
       - path: /var/log/*
         tag: apache
-    papertrail_group_files_to_exclude:
       - /var/log/*.old
-    papertrail_host_files_to_log:
       - path: /var/log/yum.log
         tag: yum
       - /var/log/dmesg
-    papertrail_files_to_log:
       - /var/log/audit/audit.log
 
     papertrail_log_facility: local7
