@@ -1,7 +1,7 @@
 ---
 - name: Set installer arquitecture
   set_fact:
-    installer_arch: "amd64"
+    papertrail_installer_arch: "amd64"
   when: ansible_architecture == "x86_64"
 
 - name: Include os family variables
