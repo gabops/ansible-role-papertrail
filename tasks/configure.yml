@@ -1,4 +1,9 @@
 ---
+- name: Configure Papertrail service
+  service:
+    name: "{{ papertrail_service_name }}"
+    state: "{{ papertrail_service_state }}"
+
 - name: Configure Papertrail managed configuration file
   template:
     src: log_files.yml.j2
@@ -10,8 +15,3 @@
     force: true
   notify: restart papertrail
   when: papertrail_managed_conf_file and papertrail_destination_host | length
-
-- name: Start Papertrail service
-  service:
-    name: "{{ papertrail_service_name }}"
-    state: "{{ papertrail_service_state }}"
