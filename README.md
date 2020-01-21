@@ -17,7 +17,7 @@ Role Variables
 | papertrail_version | "0.20" | Version to install. 0.20 is the latest at the moment. |
 | papertrail_config_file_path | /etc/papertrail_conf.yml | Name of the configuration file for remote_syslog. |
 | papertrail_service_enabled | true | Configure remote_syslog for starting when the system is booted. |
-| papertrail_service_started | true | The role will start the service after applying the configuration. |
+| papertrail_service_state | started | Defines the status of the service. |
 | papertrail_managed_conf_file | true | If false, no configuration will be applied (All variables below will be ignored). Just the installation and nothing else. |
 | papertrail_custom_hostname | "" | By default remote_syslog2 uses the hostname of the node. This can be this can be overwritten here. |
 | papertrail_destination_host | "" | Defines the Papertrail destination host to send the logs to. Check your papertrail account for it. |
