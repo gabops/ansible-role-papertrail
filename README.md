@@ -30,10 +30,11 @@ Role Variables
 | papertrail_files_to_exclude | [] | Files to exclude in a directory. |
 | papertrail_exclude_patterns | [] | The pattern in the log file you are reading you want to ignore. |
 
+
 > For more detailed information about remote_syslog2 configuration please visit [remote_syslog2 documentation](https://github.com/papertrail/remote_syslog2/blob/master/README.md) on Github.
 
 > For more detailed information about Papertrail please visit
-[Papertrail official documentation](https://help.papertrailapp.com/kb/configuration/configuring-centralized-logging-from-text-log-files-in-unix/)
+[official documentation](https://help.papertrailapp.com/kb/configuration/configuring-centralized-logging-from-text-log-files-in-unix/)
 
 Dependencies
 ------------
@@ -53,9 +54,16 @@ Example Playbook
     papertrail_log_facility: local7
     papertrail_log_severity: warn
     papertrail_custom_hostname: "main-server-01"
-    papertrail_host_files_to_log:
+    papertrail_files_to_log:
+      - path: /var/log/messages
+        tag: messages
       - /var/log/dmesg
       - /var/log/httpd/access_log
+    papertrail_exclude_patterns:
+      - ^password.*
+    papertrail_exclude_files:
+      - .tar.gz
+      - "*.old"
   roles:
       - role: papertrail
 ```
