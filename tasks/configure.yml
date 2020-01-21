@@ -1,8 +1,8 @@
 ---
 - name: Configure Papertrail managed configuration file
   template:
-    src: papertrail_conf.yml.j2
-    dest: "{{ papertrail_config_file_path }}/{{ papertrail_config_file_name }}"
+    src: log_files.yml.j2
+    dest: "{{ papertrail_config_file_path }}/"
     owner: "{{ papertrail_managed_conf_file_owner }}"
     group: "{{ papertrail_managed_conf_file_group }}"
     mode: "{{ papertrail_managed_conf_file_mode | string }}"
@@ -11,14 +11,7 @@
   notify: restart papertrail
   when: papertrail_managed_conf_file and papertrail_destination_host | length
 
-- name: Enable Papertrail service
-  service:
-    name: "{{ papertrail_service_name }}"
-    enabled: true
-  when: papertrail_service_enabled | bool
-
 - name: Start Papertrail service
   service:
     name: "{{ papertrail_service_name }}"
-    state: started
-  when: papertrail_service_started | bool
+    state: "{{ papertrail_service_state }}"
