@@ -7,23 +7,3 @@
 - name: Include os family variables
   include_vars:
     file: "{{ ansible_os_family }}.yml"
-
-- name: Converge files to log
-  set_fact:
-    files_to_log: >
-      {{
-        papertrail_files_to_log | default([]) |
-        union(papertrail_common_files_to_log | default([])) |
-        union(papertrail_group_files_to_log | default([])) |
-        union(papertrail_host_files_to_log | default([]))
-      }}
-
-- name: Converge files to exclude
-  set_fact:
-    files_to_exclude: >
-      {{
-        papertrail_files_to_exclude | default([]) |
-        union(papertrail_common_files_to_exclude | default([])) |
-        union(papertrail_group_files_to_exclude | default([])) |
-        union(papertrail_host_files_to_exclude | default([]))
-      }}
