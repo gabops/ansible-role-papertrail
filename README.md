@@ -44,7 +44,7 @@ Example Playbook
 ----------------
 
 ```yaml
-- hosts: webserver
+- hosts: webserver-01
   vars:
     papertrail_version: "0.19"
     papertrail_destination_host: logs.papertrailapp.com
@@ -52,7 +52,7 @@ Example Playbook
     papertrail_destination_protocol: tls
     papertrail_log_facility: local7
     papertrail_log_severity: warn
-    papertrail_custom_hostname: "webserver-01"
+    papertrail_custom_hostname: "main-server-01"
     papertrail_host_files_to_log:
       - /var/log/dmesg
       - /var/log/httpd/access_log
