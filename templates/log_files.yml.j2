@@ -7,9 +7,9 @@ destination:
   host: {{ papertrail_destination_host }}
   port: {{ papertrail_destination_port }}
   protocol: {{ papertrail_destination_protocol }}
-{% if files_to_log | length %}
+{% if papertrail_files_to_log | length %}
 files:
-{% for file in files_to_log %}
+{% for file in papertrail_files_to_log %}
 {% if file is mapping %}
 {% for key, value in file.items() %}
 {% if key == "path" %}
@@ -23,9 +23,9 @@ files:
 {% endif %}
 {% endfor %}
 {% endif %}
-{% if files_to_exclude | length %}
+{% if papertrail_files_to_exclude | length %}
 exclude_files:
-{% for file in files_to_exclude %}
+{% for file in papertrail_files_to_exclude %}
   - {{ file }}
 {% endfor %}
 {% endif %}
