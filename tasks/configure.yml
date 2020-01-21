@@ -4,10 +4,10 @@
     name: "{{ papertrail_service_name }}"
     state: "{{ papertrail_service_state }}"
 
-- name: Configure Papertrail managed configuration file
+- name: Configure Papertrail
   template:
     src: log_files.yml.j2
-    dest: "{{ papertrail_config_file_path }}/"
+    dest: "{{ papertrail_config_file_path }}/log_files.yml"
     owner: "{{ papertrail_managed_conf_file_owner }}"
     group: "{{ papertrail_managed_conf_file_group }}"
     mode: "{{ papertrail_managed_conf_file_mode | string }}"
