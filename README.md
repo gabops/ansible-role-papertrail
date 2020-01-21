@@ -2,9 +2,7 @@ gabops.papertrail
 =================
 [![Build Status](https://travis-ci.org/gabops/ansible-role-papertrail.svg?branch=master)](https://travis-ci.org/gabops/ansible-role-papertrail)
 
-Installs and configures Papertrail (remote_syslog2) (see 
-[Papertrail official documentation](https://help.papertrailapp.com/kb/configuration/configuring-centralized-logging-from-text-log-files-in-unix/)
-and [remote_syslog2 Github repo](https://github.com/papertrail/remote_syslog2)
+Installs and configures Papertrail (remote_syslog2).
 
 Requirements
 ------------
@@ -32,8 +30,10 @@ Role Variables
 | papertrail_files_to_exclude | [] | Files to exclude in a directory. |
 | papertrail_exclude_patterns | [] | The pattern in the log file you are reading you want to ignore. |
 
-> For more detailed information about remote_syslog2 configuration please visit https://github.com/papertrail/remote_syslog2/blob/master/README.md
+> For more detailed information about remote_syslog2 configuration please visit [remote_syslog2 documentation](https://github.com/papertrail/remote_syslog2/blob/master/README.md) on Github.
 
+> For more detailed information about Papertrail please visit
+[Papertrail official documentation](https://help.papertrailapp.com/kb/configuration/configuring-centralized-logging-from-text-log-files-in-unix/)
 
 Dependencies
 ------------
