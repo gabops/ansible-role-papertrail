@@ -15,4 +15,3 @@
   service:
     name: "{{ papertrail_service_name }}"
     state: "{{ papertrail_service_state }}"
-
