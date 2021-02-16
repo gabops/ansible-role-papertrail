@@ -4,7 +4,6 @@ services: docker
 
 env:
   matrix:
-    - TEST_DISTRO: centos:6
     - TEST_DISTRO: centos:7
     - TEST_DISTRO: amazonlinux:1
     - TEST_DISTRO: amazonlinux:2
