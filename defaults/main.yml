@@ -5,6 +5,8 @@ papertrail_service_enabled: true
 
 papertrail_service_state: started
 
+papertrail_check_download_certs: true
+
 papertrail_managed_conf_file: true
 
 papertrail_managed_conf_file_owner: root
