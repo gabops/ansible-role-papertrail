@@ -10,5 +10,5 @@
   apt:
     deb: "{{ papertrail_download_url }}/{{ papertrail_package_name }}"
     update_cache: true
-    force: "{{ False if papertrail_check_download_certs == True else papertrail_check_download_certs }}"
+    force: "{{ False if papertrail_check_download_certs | bool else papertrail_check_download_certs }}"
   when: ansible_os_family == "Debian"
